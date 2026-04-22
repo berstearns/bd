@@ -13,16 +13,18 @@ gh pr diff <N>
 
 ## Parse the PR body
 
-Extract these four fields:
+Extract these five fields, in order:
 
 ```
 Action: add|pick|done|drop
 Project: <slug>
 Id: <id>
 Title: <title>
+Rules: confirmed 1-9 per rules/PR.md
 ```
 
-Any missing → **reject**.
+Any missing, misordered, or malformed → **reject**. The `Rules:` line must
+match the literal string `confirmed 1-9 per rules/PR.md`.
 
 ## Static checks
 
@@ -63,6 +65,26 @@ Any additional file touched → **reject**.
 - Item line follows format: `- [<id>] <title>( — <note>)? \(added: ...\)( \(picked: ...\))?( \(done: ...\))?`.
 - Date suffixes are in ISO `YYYY-MM-DD` and plausibly recent.
 - Title is non-empty and <80 chars.
+
+## Data-structure rules (must all hold)
+
+Verify each of the 9 rules from `rules/PR.md` independently. The `Rules:`
+attestation in the PR body is **not** sufficient — the diff must actually
+satisfy each one.
+
+| # | Rule                                   | How to check                                                                 |
+|---|----------------------------------------|------------------------------------------------------------------------------|
+| 1 | One project file (+ archive iff done)  | File-set check above                                                         |
+| 2 | Frontmatter untouched                  | Diff does not touch lines between the two `---` fences                       |
+| 3 | Six sections, fixed names & order      | `grep -c '^## ' projects/<slug>.md` returns 6; names/order match template    |
+| 4 | Stacks grow at the top                 | Added line appears immediately after the target `##` heading in the diff    |
+| 5 | Item line format + unique id           | Regex match; `git grep "\[<id>\]" origin/main` returns nothing for `add`     |
+| 6 | Lifecycle suffixes only                | Pre-suffix substring of moved line is byte-identical across the `-`/`+` pair |
+| 7 | One action per PR                      | Title verb, branch verb, and `Action:` field all agree                       |
+| 8 | File-touch invariants per action       | File-set check above                                                         |
+| 9 | No edits to rules/README/AGENTS/templates/other projects | No paths outside `projects/<slug>.md` or (for done) `archive/done.md` appear in the diff |
+
+Any violation → **reject** citing the rule number.
 
 ## Decide
 
