@@ -91,16 +91,17 @@ with it. See the action rules for how each action handles this.
 
 ## Enforcement scope
 
-Invariants T1–T5 are **declared here** and must be enforced by action
-rules that touch the subfolder. `rules/REVIEW.md` enforces whatever
-checks the action rules define. This file does not itself add reviewer
-checks — it defines the shape; the action rules define when to check.
+Invariants T1–T5 are **declared here** but **no reviewer check is
+activated by this file**. They are future-facing: action rules that
+are later extended to read/write the subfolder will carry the
+corresponding checks into `rules/REVIEW.md` at that time (in a
+separate structural PR).
 
-Until action rules are extended to read/write subfolders (tracked as a
-separate structural PR), subfolders are write-only: you may create and
-hand-edit them, but the `add|pick|done|drop` actions do not yet touch
-them. The reviewer does not yet enforce T1–T5 beyond "the six files
-exist if the folder exists" (see S5 note on `rules/REVIEW.md`).
+Until then, subfolders are hand-edited only. The existing action rules
+(`add|pick|done|drop`) do not touch them, and the existing file-set
+check in `rules/REVIEW.md` ("Any additional file touched → reject")
+already prevents an action PR from reaching into the subfolder — so
+no new reviewer hook is needed yet.
 
 ## Creating a new project
 
@@ -113,12 +114,12 @@ exist if the folder exists" (see S5 note on `rules/REVIEW.md`).
 
 ## Minimal example
 
-Overview `projects/simple-tcp-comm.md` already contains:
+Overview `projects/simple-tcp-comm.md` contains on `main`:
 
 ```
 ## Todos
 
-- [c94d0a79] Add stale job reaper to server — jobs stuck in running after worker failure (added: 2026-04-22)
+- [a3f2c1b9] Add reconnect backoff to client — client should back off on ECONNREFUSED instead of tight-looping (added: 2026-04-22)
 ```
 
 A matching expansion `projects/simple-tcp-comm/todos.md` could read:
@@ -126,19 +127,19 @@ A matching expansion `projects/simple-tcp-comm/todos.md` could read:
 ```markdown
 # simple-tcp-comm — todos
 
-## [c94d0a79] Add stale job reaper to server
+## [a3f2c1b9] Add reconnect backoff to client
 
-**Problem.** A worker picks a job (state → `running`), then crashes
-before sending an ack. The job stays in `running` forever.
+**Problem.** The client currently retries `connect()` in a tight loop
+when the server is down, burning CPU and log volume for no useful
+signal.
 
-**Proposed approach.** A background loop on the server scans for jobs
-whose `picked_at` is older than a threshold and resets them to
-`pending`. Threshold must coordinate with the heartbeat feature
-`[4e8a1c63]` to avoid double recovery.
+**Proposed approach.** Exponential backoff with a small jitter
+component, capped at ~30s. Reset the delay on the first successful
+connect.
 
 **Open questions.**
-- Threshold = heartbeat interval × N? What N?
-- Should the reaper log which worker held the reclaimed job?
+- Base delay and cap values?
+- Should we log every retry or only attempts beyond the cap?
 ```
 
 The overview line is untouched; the expansion only adds depth.
