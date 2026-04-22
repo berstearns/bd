@@ -11,6 +11,16 @@ Never invent rules. If a rule is unclear, stop and ask the human.
 4. Read the matching rule file **in full** before editing.
 5. Follow `rules/PR.md` to open a pull request.
 
+## Skills
+
+`skills/` contains role playbooks — sequencing guides for specific agent jobs.
+If a skill matches your role, read it in full before step 3 above. It tells you
+*how* to perform the work; `rules/` tells you *what format* the result must take.
+
+| Skill                     | Use when                                                 |
+|---------------------------|----------------------------------------------------------|
+| `skills/pr-creator.md`    | You are opening a PR to add/pick/done/drop an item       |
+
 ## The four actions
 
 | Action  | Rule             | What it does                                              |

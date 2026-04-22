@@ -17,6 +17,8 @@ bd/
 │   ├── DROP.md          discard an item
 │   ├── PR.md            pull-request protocol (author)
 │   └── REVIEW.md        review protocol (reviewer)
+├── skills/
+│   └── pr-creator.md    role playbook for an agent opening a PR
 ├── projects/
 │   ├── _template.md     copy for a new project
 │   └── <slug>.md        one file per project
