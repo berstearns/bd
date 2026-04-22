@@ -8,9 +8,12 @@ You must satisfy **every** rule below before you push. The reviewer enforces
 them and will reject on any violation. Re-read this list after editing and
 before running `gh pr create`.
 
-1. **One project = one file.** Your change touches exactly one
-   `projects/<slug>.md` (plus `archive/done.md` iff the action is `done`).
-   `<slug>` must match the frontmatter `slug:` of that file.
+1. **One project's scope.** Your change touches files inside exactly one
+   project's scope — the overview `projects/<slug>.md`, its subfolder
+   `projects/<slug>/` (for `run`), or (iff `done`) one appended line in
+   `archive/done.md`. The exact file-touch invariant per action is
+   defined in rule 8. `<slug>` must match the frontmatter `slug:` of
+   that project.
 2. **Project frontmatter is authoritative.** Every project file has
    frontmatter pinning `slug`, `path`, and `objective`. Never edit frontmatter
    in an action PR.
@@ -30,7 +33,7 @@ before running `gh pr create`.
 6. **Lifecycle adds suffixes only.** `pick` appends ` (picked: YYYY-MM-DD)`.
    `done` appends ` (done: YYYY-MM-DD)`. The `[<id>]`, title, and note
    preceding the suffixes must be byte-identical across transitions.
-7. **Four actions, one per PR.** `add` | `pick` | `done` | `drop`. Never bundle.
+7. **Five actions, one per PR.** `add` | `pick` | `done` | `drop` | `run`. Never bundle.
 8. **File-touch invariants** (the reviewer checks these exactly):
    | Action | Files touched                                      |
    |--------|----------------------------------------------------|
@@ -38,6 +41,7 @@ before running `gh pr create`.
    | pick   | exactly `projects/<slug>.md`                       |
    | done   | exactly `projects/<slug>.md` and `archive/done.md` |
    | drop   | exactly `projects/<slug>.md`                       |
+   | run    | exactly `projects/<slug>/doing.md`                 |
 9. **No edits to rules, README, AGENTS.md, templates, or other projects.**
    Those require a human PR and are out of scope for action PRs.
 
@@ -47,8 +51,8 @@ all nine rules hold. Lying there is a rejection offence.
 ## Preconditions
 
 - You are on a freshly-pulled `main`.
-- You have decided one action: `add`, `pick`, `done`, or `drop`.
-- You have read the matching rule file (`rules/ADD.md` | `PICK.md` | `DONE.md` | `DROP.md`).
+- You have decided one action: `add`, `pick`, `done`, `drop`, or `run`.
+- You have read the matching rule file (`rules/ADD.md` | `PICK.md` | `DONE.md` | `DROP.md` | `RUN.md`).
 - You have re-read the **Data-structure rules** section above.
 - `gh` is authenticated on the host.
 
@@ -97,7 +101,7 @@ all nine rules hold. Lying there is a rejection offence.
 The body must contain these five fields on their own lines, in this order:
 
 ```
-Action: add|pick|done|drop
+Action: add|pick|done|drop|run
 Project: <slug>
 Id: <id>
 Title: <title>
@@ -109,6 +113,9 @@ The `Rules:` line must read exactly `confirmed 1-9 per rules/PR.md`. Its
 presence is your attestation that every Data-structure rule (1 through 9) holds.
 The reviewer then verifies each rule independently against the diff — if the
 diff contradicts the attestation, the PR is rejected.
+
+The `run` action requires additional fields after the five above; see
+`rules/RUN.md` for the full schema.
 
 ## If the reviewer requests changes
 

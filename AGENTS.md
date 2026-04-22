@@ -21,14 +21,15 @@ If a skill matches your role, read it in full before step 3 above. It tells you
 |---------------------------|----------------------------------------------------------|
 | `skills/pr-creator.md`    | You are opening a PR to add/pick/done/drop an item       |
 
-## The four actions
+## The five actions
 
 | Action  | Rule             | What it does                                              |
 |---------|------------------|-----------------------------------------------------------|
 | `add`   | `rules/ADD.md`   | Push an item onto a stack (Ideas/Milestones/Features/Todos) |
 | `pick`  | `rules/PICK.md`  | Move an item from a stack to `Doing`                      |
 | `done`  | `rules/DONE.md`  | Close a `Doing` item; append to `archive/done.md`         |
-| `drop`  | `rules/DROP.md`  | Delete an item without doing it                            |
+| `drop`  | `rules/DROP.md`  | Delete an item without doing it                           |
+| `run`   | `rules/RUN.md`   | Record one execution of a `Doing` item against a target git repo |
 
 **One action per pull request. No exceptions.**
 
@@ -36,8 +37,11 @@ If a skill matches your role, read it in full before step 3 above. It tells you
 
 These hold for every PR. The reviewer will reject anything violating them.
 
-1. **Exactly one project file is touched** (`projects/<slug>.md`), except for `done`
-   which also appends a single line to `archive/done.md`. No other files change.
+1. **Exactly one project's scope is touched.** The file-touch invariant per
+   action is defined in `rules/PR.md` rule 8. In short: `add`/`pick`/`drop`
+   touch only `projects/<slug>.md`; `done` touches `projects/<slug>.md` +
+   `archive/done.md`; `run` touches only `projects/<slug>/doing.md`.
+   No other files change.
 2. **The change matches exactly one action pattern** (see rules).
 3. **Every item has a non-empty title and an 8-char lowercase hex id** (e.g. `a3f2c1b9`).
 4. **Ids are unique across the whole repo**. Before adding, `grep -r '\[<id>\]' .` must return nothing.
