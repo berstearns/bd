@@ -21,6 +21,7 @@ Used as a sandbox for deploy patterns, schema evolution, and timeline debugging.
 
 ## Ideas
 
+- [88e4838d] Design worker routing strategy based on hashing — map users to specific DBs by user-id, timestamp, or region (added: 2026-04-22)
 - [a1f37c0c] Create equivalent architecture in Erlang — leverage OTP supervisors for natural fault tolerance (added: 2026-04-22)
 - [7c1e4a02] Replace ad-hoc env files with a single .env.{profile} loader (added: 2026-04-22)
 
