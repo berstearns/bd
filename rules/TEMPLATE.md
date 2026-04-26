@@ -8,10 +8,11 @@ Each project is represented by two things:
    titles, section membership, and lifecycle state are read from here,
    not from anywhere else.
 
-2. **One optional subfolder** — `projects/<slug>/`. Contains six
+2. **One mandatory subfolder** — `projects/<slug>/`. Contains six
    free-form expansion files, one per section. Each expansion file
    holds per-item *depth* (design notes, rationale, links, open
    questions, acceptance criteria) that would bloat the overview.
+   The subfolder MUST exist for every project; see invariant T6.
 
 The overview is a dashboard; the subfolder is a detail drawer. The
 overview is format-strict and agent-written; the subfolder is
@@ -33,13 +34,9 @@ projects/<slug>/
 └── done.md
 ```
 
-When a project has a subfolder, all six files MUST exist. Missing files
-are a reject. Empty files are fine — a file may contain only its header
-line (see below).
-
-Per-project subfolders are **opt-in**: a project may exist with only
-the overview file. Once the subfolder is created, the six-file invariant
-applies.
+Every project MUST have its subfolder. All six files MUST exist.
+Missing subfolder or missing file is a reject. Empty files are fine —
+a file may contain only its header line (see below).
 
 ## Expansion file format
 
@@ -89,28 +86,34 @@ matching its item's *current* overview section. When lifecycle moves
 the item (e.g. `pick` moves Todos → Doing), the expansion migrates
 with it. See the action rules for how each action handles this.
 
+**T6 — Subfolder is mandatory.** For every `projects/<slug>.md` that
+exists on `main`, the directory `projects/<slug>/` MUST also exist on
+`main` and MUST contain all six expansion files: `ideas.md`,
+`milestones.md`, `features.md`, `todos.md`, `doing.md`, `done.md`.
+A project file without its subfolder, or a subfolder missing any of
+the six files, is a reject. Files may be empty beyond the header line
+per T4.
+
 ## Enforcement scope
 
-Invariants T1–T5 are **declared here** but **no reviewer check is
-activated by this file**. They are future-facing: action rules that
-are later extended to read/write the subfolder will carry the
-corresponding checks into `rules/REVIEW.md` at that time (in a
-separate structural PR).
-
-Until then, subfolders are hand-edited only. The existing action rules
-(`add|pick|done|drop`) do not touch them, and the existing file-set
-check in `rules/REVIEW.md` ("Any additional file touched → reject")
-already prevents an action PR from reaching into the subfolder — so
-no new reviewer hook is needed yet.
+Invariant T6 is **machine-checked** by `rules/REVIEW.md`: every PR that
+references a slug (action PRs, or structural PRs adding/touching a
+project) must verify that `projects/<slug>/` exists with all six files
+on the merged tree. T1–T5 remain declared here but not yet
+machine-checked: action rules that are later extended to read/write
+the subfolder will carry the corresponding checks into `rules/REVIEW.md`
+at that time (in a separate structural PR).
 
 ## Creating a new project
 
 1. `cp projects/_template.md projects/<slug>.md`.
-2. (Optional) `cp -r projects/_template projects/<slug>` to scaffold
-   the subfolder with the six stub files.
-3. Fill the overview frontmatter (`slug`, `path`, `objective`) and
+2. `cp -r projects/_template projects/<slug>` to scaffold the subfolder
+   with the six stub files. **Required** — invariant T6.
+3. In each `projects/<slug>/*.md` stub, replace the literal `<slug>`
+   placeholder in the header line with the actual slug.
+4. Fill the overview frontmatter (`slug`, `path`, `objective`) and
    the `## Objective` paragraph.
-4. Leave section files empty until an item warrants expansion.
+5. Leave section files empty until an item warrants expansion.
 
 ## Minimal example
 

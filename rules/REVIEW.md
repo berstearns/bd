@@ -37,7 +37,11 @@ Missing, misordered, or malformed → **reject**. See `rules/RUN.md`.
    matches the `Action` field and `<id>` matches the `Id` field.
 2. **Branch matches** `<verb>/<slug>/<id>`.
 3. **Id** is 8 lowercase hex chars.
-4. **Slug** corresponds to an existing `projects/<slug>.md`.
+4. **Slug** corresponds to an existing `projects/<slug>.md` AND an
+   existing `projects/<slug>/` directory containing all six expansion
+   files: `ideas.md`, `milestones.md`, `features.md`, `todos.md`,
+   `doing.md`, `done.md`. Missing subfolder or missing files → **reject**
+   (cite `rules/TEMPLATE.md` invariant T6).
 
 ## File-set checks
 
