@@ -33,6 +33,7 @@ Used as a sandbox for deploy patterns, schema evolution, and timeline debugging.
 
 ## Todos
 
+- [c94d0a79] Add stale job reaper to server — jobs stuck in running after worker failure are lost forever (added: 2026-04-22)
 - [a3f2c1b9] Add reconnect backoff to client — client should back off on ECONNREFUSED instead of tight-looping (added: 2026-04-22)
 
 ## Doing
