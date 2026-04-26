@@ -39,6 +39,7 @@ that haven't yet been branched into a dated working tree.
 
 ## Todos
 
+- [61b2fb37] Persist last-read page per comic across app resets — urgent bugfix; resume currently lands on page 1 every time (added: 2026-04-22)
 - [f94a2c0e] Consolidate bugs/ notes from app7-ideas-for-later into trackable items here (added: 2026-04-22)
 
 ## Doing
