@@ -49,7 +49,7 @@ These hold for every PR. The reviewer will reject anything violating them.
 6. **No silent edits**. Don't rename, rephrase, or reformat existing items. Don't touch unrelated sections.
 7. **No new files outside what the rule prescribes**. No README edits, no templates, no reflows.
 8. **Commit subject, branch name, and PR title follow `rules/PR.md` exactly.**
-9. **If the project file has no `<slug>.md`, the action is invalid** — ask the human to create the project first.
+9. **If the project has no `projects/<slug>.md` overview OR no `projects/<slug>/` subfolder with the six expansion files, the action is invalid** — ask the human to create the project first. See `rules/TEMPLATE.md` invariant T6.
 10. **Never fabricate project context**. If you don't know what the project is, read its frontmatter `path:` and inspect the codebase; if still unclear, stop.
 
 ## Item line format
