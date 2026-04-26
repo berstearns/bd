@@ -24,6 +24,7 @@ Success looks like a playable MVP with one language pack and one analytics dashb
 
 ## Ideas
 
+- [a60cbf75] Add language-data abstraction with pluggable grammar taxonomies — make it trivial to add a language and swap grammar taxonomies (added: 2026-04-26)
 - [0d6b8f32] Spaced-repetition scheduling driven by in-game encounter frequency (added: 2026-04-22)
 
 ## Milestones
