@@ -35,6 +35,7 @@ that haven't yet been branched into a dated working tree.
 
 ## Features
 
+- [9cc01644] Add cloud sync every X seconds with off-by-default toggle — X defaults to 10s; feature gated by a boolean flag, off by default (added: 2026-04-22)
 - [d70e4519] Remove the content button on the catalog view — spec in ideas-for-later (added: 2026-04-22)
 
 ## Todos
