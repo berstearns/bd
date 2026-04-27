@@ -13,3 +13,4 @@ gen-gec-errant — - [5f71bc43] Make eval scripts accept models for online predi
 gen-gec-errant — - [4e60ab32] Run eval scripts with prediction files from no-training benchmark models — gpt2-native-zero-shot first (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 glms-for-ilms — - [e81a9904] Set up standalone eval scripts, one per evaluation table in the paper — diagnosis, learner-plausibility, transfer (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 glms-for-ilms — - [f92bab05] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across GLM/NWP/BERT (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
+glms-for-ilms — - [1b4dcd07] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
