@@ -44,8 +44,7 @@ CELVA-SP, and KUPA-KEYS are zero-shot transfer probes.
 
 ## Doing
 
-- [a47c12fd] Set up standalone eval scripts, one per evaluation table in the paper — stratified PPL, cloze, transfer (added: 2026-04-27) (picked: 2026-04-27)
-
 ## Done
 
+- [a47c12fd] Set up standalone eval scripts, one per evaluation table in the paper — stratified PPL, cloze, transfer (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 - [7e9a1b3f] Assign GitHub repo to project — create remote, push initial commit, link in frontmatter (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)

@@ -15,3 +15,4 @@ glms-for-ilms — - [e81a9904] Set up standalone eval scripts, one per evaluatio
 glms-for-ilms — - [f92bab05] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across GLM/NWP/BERT (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 glms-for-ilms — - [1b4dcd07] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 glms-for-ilms — - [0a3cbc06] Run eval scripts with prediction files from no-training benchmark models — NWP and BERT-MLM first (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
+metadata-aware-nwp — - [a47c12fd] Set up standalone eval scripts, one per evaluation table in the paper — stratified PPL, cloze, transfer (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
