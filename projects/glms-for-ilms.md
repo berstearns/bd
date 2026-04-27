@@ -40,10 +40,11 @@ error profile) turn a vanilla GLM into an ILM. Target venue: EMNLP 2026.
 
 ## Todos
 
-- [1b4dcd07] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27)
 - [0a3cbc06] Run eval scripts with prediction files from no-training benchmark models — NWP and BERT-MLM first (added: 2026-04-27)
 
 ## Doing
+
+- [1b4dcd07] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27) (picked: 2026-04-27)
 
 ## Done
 
