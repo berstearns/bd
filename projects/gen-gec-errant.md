@@ -47,9 +47,8 @@ both fine-tuned and zero-shot — on EFCAMDAT, CELVA-SP, and KUPA-KEYS.
 
 ## Doing
 
-- [3d5fa021] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across all reproducibility variants (added: 2026-04-27) (picked: 2026-04-27)
-
 ## Done
 
+- [3d5fa021] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across all reproducibility variants (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 - [2c4e8f10] Set up standalone eval scripts, one per evaluation table in the paper — error-rate, ERRANT category, perplexity (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 - [9a1c3d5b] Assign GitHub repo to project — create remote, push initial commit, link in frontmatter (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
