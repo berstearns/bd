@@ -1,6 +1,9 @@
 ---
 slug: glms-for-ilms
 path: /home/b/p/writings/sketches/glms-for-ilms-in-sla
+github: https://github.com/berstearns/public-glms-for-ilms-in-sla
+gdrive_deploy: i:/_rk/glms-for-ilms-in-sla/deploy
+gdrive_resources: i:/_rk/glms-for-ilms-in-sla/resources
 objective: GLM autoregressive blank-infilling for learner cloze, with learner-conditioning to make an Interlanguage LM
 status: active
 created: 2026-04-27
