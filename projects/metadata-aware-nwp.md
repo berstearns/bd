@@ -38,10 +38,11 @@ CELVA-SP, and KUPA-KEYS are zero-shot transfer probes.
 
 ## Todos
 
-- [d70f7803] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27)
 - [c69e5602] Run eval scripts with prediction files from no-training benchmark models — B0 native GPT-2 first (added: 2026-04-27)
 
 ## Doing
+
+- [d70f7803] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27) (picked: 2026-04-27)
 
 ## Done
 
