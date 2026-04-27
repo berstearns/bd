@@ -40,10 +40,9 @@ CELVA-SP, and KUPA-KEYS are zero-shot transfer probes.
 
 ## Doing
 
-- [c69e5602] Run eval scripts with prediction files from no-training benchmark models — B0 native GPT-2 first (added: 2026-04-27) (picked: 2026-04-27)
-
 ## Done
 
+- [c69e5602] Run eval scripts with prediction files from no-training benchmark models — B0 native GPT-2 first (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 - [d70f7803] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 - [b58d3401] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across B0/B1/B2/G1 (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 - [a47c12fd] Set up standalone eval scripts, one per evaluation table in the paper — stratified PPL, cloze, transfer (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
