@@ -42,9 +42,9 @@ both fine-tuned and zero-shot — on EFCAMDAT, CELVA-SP, and KUPA-KEYS.
 
 ## Todos
 
-- [4e60ab32] Run eval scripts with prediction files from no-training benchmark models — gpt2-native-zero-shot first (added: 2026-04-27)
-
 ## Doing
+
+- [4e60ab32] Run eval scripts with prediction files from no-training benchmark models — gpt2-native-zero-shot first (added: 2026-04-27) (picked: 2026-04-27)
 
 ## Done
 
