@@ -42,10 +42,11 @@ both fine-tuned and zero-shot — on EFCAMDAT, CELVA-SP, and KUPA-KEYS.
 
 ## Todos
 
-- [5f71bc43] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27)
 - [4e60ab32] Run eval scripts with prediction files from no-training benchmark models — gpt2-native-zero-shot first (added: 2026-04-27)
 
 ## Doing
+
+- [5f71bc43] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27) (picked: 2026-04-27)
 
 ## Done
 
