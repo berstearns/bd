@@ -37,10 +37,10 @@ error profile) turn a vanilla GLM into an ILM. Target venue: EMNLP 2026.
 
 ## Todos
 
-- [6b3a25c9] Build cross-corpus transfer eval EFCAMDAT to CELVA-SP/KUPA-KEYS/andrew100k (added: 2026-04-27)
-- [5d1e8f74] Set up BERT MLM baseline (variant 05) for diagnosis section (added: 2026-04-27)
-- [4c9b30a6] Set up NWP prompt-fillblank baseline (variant 03) for diagnosis section (added: 2026-04-27)
-- [8a2f7e1d] Implement GLM autoregressive blank-infilling objective for multi-token spans (added: 2026-04-27)
+- [1b4dcd07] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27)
+- [0a3cbc06] Run eval scripts with prediction files from no-training benchmark models — NWP and BERT-MLM first (added: 2026-04-27)
+- [f92bab05] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across GLM/NWP/BERT (added: 2026-04-27)
+- [e81a9904] Set up standalone eval scripts, one per evaluation table in the paper — diagnosis, learner-plausibility, transfer (added: 2026-04-27)
 
 ## Doing
 
