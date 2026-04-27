@@ -43,9 +43,10 @@ error profile) turn a vanilla GLM into an ILM. Target venue: EMNLP 2026.
 - [1b4dcd07] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27)
 - [0a3cbc06] Run eval scripts with prediction files from no-training benchmark models — NWP and BERT-MLM first (added: 2026-04-27)
 - [f92bab05] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across GLM/NWP/BERT (added: 2026-04-27)
-- [e81a9904] Set up standalone eval scripts, one per evaluation table in the paper — diagnosis, learner-plausibility, transfer (added: 2026-04-27)
 
 ## Doing
+
+- [e81a9904] Set up standalone eval scripts, one per evaluation table in the paper — diagnosis, learner-plausibility, transfer (added: 2026-04-27) (picked: 2026-04-27)
 
 ## Done
 
