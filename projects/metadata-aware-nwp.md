@@ -1,6 +1,9 @@
 ---
 slug: metadata-aware-nwp
 path: /home/b/p/writings/sketches/metadata-aware-nwp-in-sla
+github: https://github.com/berstearns/public-metadata-aware-nwp-in-sla
+gdrive_deploy: i:/_rk/metadata-aware-nwp-in-sla/deploy
+gdrive_resources: i:/_rk/metadata-aware-nwp-in-sla/resources
 objective: Metadata-aware SDPA gate for NWP on L2 text, gated by (CEFR, L1), with cross-corpus zero-shot transfer eval
 status: active
 created: 2026-04-27
