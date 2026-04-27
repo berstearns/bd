@@ -48,8 +48,7 @@ both fine-tuned and zero-shot — on EFCAMDAT, CELVA-SP, and KUPA-KEYS.
 
 ## Doing
 
-- [2c4e8f10] Set up standalone eval scripts, one per evaluation table in the paper — error-rate, ERRANT category, perplexity (added: 2026-04-27) (picked: 2026-04-27)
-
 ## Done
 
+- [2c4e8f10] Set up standalone eval scripts, one per evaluation table in the paper — error-rate, ERRANT category, perplexity (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
 - [9a1c3d5b] Assign GitHub repo to project — create remote, push initial commit, link in frontmatter (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
