@@ -49,6 +49,6 @@ both fine-tuned and zero-shot — on EFCAMDAT, CELVA-SP, and KUPA-KEYS.
 
 ## Doing
 
-- [9a1c3d5b] Assign GitHub repo to project — create remote, push initial commit, link in frontmatter (added: 2026-04-27) (picked: 2026-04-27)
-
 ## Done
+
+- [9a1c3d5b] Assign GitHub repo to project — create remote, push initial commit, link in frontmatter (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
