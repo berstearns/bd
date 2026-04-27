@@ -1,6 +1,9 @@
 ---
 slug: gen-gec-errant
 path: /home/b/p/research-sketches/automatic-generation-correction-errortagging-v2
+github: https://github.com/berstearns/public-automatic-generation-correction-errortagging-v2
+gdrive_deploy: i:/_rk/automatic-generation-correction-errortagging-v2/deploy
+gdrive_resources: i:/_rk/automatic-generation-correction-errortagging-v2/resources
 objective: Pipeline for text generation + GEC + ERRANT tagging on learner text, used as scaffolding for cross-model experiments
 status: active
 created: 2026-04-27
