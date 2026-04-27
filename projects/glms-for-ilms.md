@@ -47,6 +47,6 @@ error profile) turn a vanilla GLM into an ILM. Target venue: EMNLP 2026.
 
 ## Doing
 
-- [8f0b2c4a] Assign GitHub repo to project — create remote, push initial commit, link in frontmatter (added: 2026-04-27) (picked: 2026-04-27)
-
 ## Done
+
+- [8f0b2c4a] Assign GitHub repo to project — create remote, push initial commit, link in frontmatter (added: 2026-04-27) (picked: 2026-04-27) (done: 2026-04-27)
