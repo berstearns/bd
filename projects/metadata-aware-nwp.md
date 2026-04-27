@@ -35,10 +35,10 @@ CELVA-SP, and KUPA-KEYS are zero-shot transfer probes.
 
 ## Todos
 
-- [3e5d7b48] Wire zero-shot transfer eval over andrew100k, CELVA-SP, KUPA-KEYS (added: 2026-04-27)
-- [9c0f6a31] Build (CEFR, L1) cell stratifier for evaluation harness — feeds PPL and cloze tables (added: 2026-04-27)
-- [2b4e8d09] Run flagship v01 (B0/B1/B2/G1) on EFCAMDAT — produce stratified PPL by (CEFR, L1) (added: 2026-04-27)
-- [7f1a3c52] Implement metadata-aware SDPA gate replacing X with [X;e_CEFR;e_L1] — bias-init so σ≈1 (added: 2026-04-27)
+- [d70f7803] Make eval scripts accept models for online prediction or offline JSONL — same harness, two input modes (added: 2026-04-27)
+- [c69e5602] Run eval scripts with prediction files from no-training benchmark models — B0 native GPT-2 first (added: 2026-04-27)
+- [b58d3401] Adapt prediction scripts to emit JSONL compatible with every eval script — one schema across B0/B1/B2/G1 (added: 2026-04-27)
+- [a47c12fd] Set up standalone eval scripts, one per evaluation table in the paper — stratified PPL, cloze, transfer (added: 2026-04-27)
 
 ## Doing
 
